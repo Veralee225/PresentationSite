@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Page 1 (Intro) -->
+    <section id="page-1" class="page">
+        <h1>Welcome!</h1>
+        <p>Hope you find this presentation fascinating.</p>
+        <div>
+        <a href="#page-2" class="btn">
+        Next Page <i class="fas 
+        fa-arrow-circle-down"></i>
+        </a>
+        </div>
+    </section>
+    <!-- Page 2 -->
+    <section id="page-2" class="page">
+        <h1>I am Vera</h1>
+        <p>Do you know that you can create cool stuffs?</p>
+        <div>
+        <a href="#page-1" class="btn btn-dark">
+        Previous Page <i class="fas 
+        fa-arrow-circle-up"></i>
+        </a>
+        <a href="#page-3" class="btn">
+            Next Page <i class="fas 
+            fa-arrow-circle-down"></i>
+            </a>
+        </div>
+    </section>
+    <!-- Page 3 -->
+    <section id="page-3" class="page">
+        <h1>Lockdown Hobbies</h1>
+        <p>This period has been crazy, so the following as been the way forward:</p>
+        <ul>
+            <li>Movies</li>
+            <li>Sleep</li>
+            <li>Eat</li>
+            <li>Code</li>
+            <li>Meditate</li>
+            <li>Read</li>
+        </ul>
+        <div>
+        <a href="#page-2" class="btn btn-dark">
+        Previous Page <i class="fas 
+        fa-arrow-circle-up"></i>
+        </a>
+        <a href="#page-4" class="btn">
+            Next Page <i class="fas 
+            fa-arrow-circle-down"></i>
+            </a>
+        </div>
+    </section>
+    <!--Page 4-->
+    <section id="page-4" class="page">
+        <h1>Cities to visit</h1>
+        <ul>
+            <li>Sydney</li>
+            <li>Tasmania</li>
+            <li>San Francisco</li>
+            <li>Newyork</li>
+        </ul>
+        <div>
+    <a href="#page-1" class="btn">
+        Previous Page <i class="fas 
+        fa-arrow-circle-up"></i>
+    </a>
+    </div>
+    </section>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+
+  <script>
+    // Smooth Scrolling
+    $('.btn').on('click', function(event) {
+        if (this.hash !== '') {
+            event.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate(
+             {
+                 scrollTop: $(hash).offset().top
+             },
+             600
+            );
+        }
+    });  
+  </script>
+</body>
+</html>

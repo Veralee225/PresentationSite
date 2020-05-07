@@ -1,0 +1,118 @@
+:root {
+   --page-1-color: #DC5C5C;
+   --page-2-color: #FF6347;
+   --page-3-color: #90EE90;
+   --page-4-color: #8B0000;
+   --animate-speed: 1s;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.4;
+    color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Page Color */
+#page-1 { background: var(--page-1-color) }
+#page-2 { background: var(--page-2-color) }
+#page-3 { background: var(--page-3-color) }
+#page-4 { background: var(--page-4-color) }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4rem;
+}
+
+.page h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin: 1rem;
+}
+
+.page p {
+    font-size: 1.3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in;
+}
+
+.btn:hover,
+ .btn-dark {
+    background: #333;
+    color: #fff;
+}
+
+.btn-dark:hover {
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Page Animation */
+#page-1 h1 {
+ animation-name: animate1;
+ animation-duration: 3s;
+ animation-iteration-count: infinite;
+ animation-fill-mode:forwards;
+ animation-delay: 2s; 
+ animation-direction: alternate;
+ animation-timing-function: ease-in-out; 
+
+}
+
+#page-1 p {
+    transform: translate3d(100px, 100px 100px)
+}
+
+#page-3 ul {
+    display: flex; 
+    align-items: flex-start;
+    list-style: none;
+}
+
+#page-3 ul li {
+    color: black;;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+}
+
+#page-4 ul {
+    display: flex; 
+    align-items: flex-start;
+    list-style: none; 
+}
+
+#page-4 ul li {
+    color: black;
+    padding: 0.75rem;
+    margin: 0 0.25rem;
+}
+
+/* Keyframes */
+@keyframes heading {
+    to {
+    transform: translationY(0);
+    }
+}
+
+@keyframes text {
+    to {
+    transform: translationY(0);
+    }
+}
