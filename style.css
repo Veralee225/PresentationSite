@@ -1,118 +1,151 @@
 :root {
-   --page-1-color: #DC5C5C;
-   --page-2-color: #FF6347;
-   --page-3-color: #90EE90;
-   --page-4-color: #8B0000;
-   --animate-speed: 1s;
+    --primary-color: #425b84;
+    --secondary-color: #ff6347;
+    --max-width: 1100px;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.4;
+    font: normal 1rem/1.5 'Arial', sans-serif;
+    background: var(--primary-color);
     color: black;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding-bottom: 50px;
 }
 
-/* Page Color */
-#page-1 { background: var(--page-1-color) }
-#page-2 { background: var(--page-2-color) }
-#page-3 { background: var(--page-3-color) }
-#page-4 { background: var(--page-4-color) }
+#main-header {
+    background: var(--secondary-color);
+    padding: 4rem 0;
+}
 
-.page {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
     text-align: center;
-    padding: 0 4rem;
+} 
+
+h1 {
+    font-size: 2.3rem;
 }
 
-.page h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    margin: 1rem;
+#timeline ul {
+   background: var(--primary-color);
+   padding: 50px 0;
 }
 
-.page p {
-    font-size: 1.3rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #f4f4f4;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    transition: all 0.3s ease-in;
-}
-
-.btn:hover,
- .btn-dark {
-    background: #333;
-    color: #fff;
-}
-
-.btn-dark:hover {
-    background: #f4f4f4;
-    color: #333;
-}
-
-/* Page Animation */
-#page-1 h1 {
- animation-name: animate1;
- animation-duration: 3s;
- animation-iteration-count: infinite;
- animation-fill-mode:forwards;
- animation-delay: 2s; 
- animation-direction: alternate;
- animation-timing-function: ease-in-out; 
-
-}
-
-#page-1 p {
-    transform: translate3d(100px, 100px 100px)
-}
-
-#page-3 ul {
-    display: flex; 
-    align-items: flex-start;
+/* Creating the line */
+#timeline ul li {
     list-style: none;
+    position: relative;
+    width: 4px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background:black;
 }
 
-#page-3 ul li {
-    color: black;;
-    padding: 0.75rem;
-    margin: 0 0.25rem;
+/* Boxes */
+#timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 1rem;
+    background: var(--secondary-color);
+    transition: all 1s ease-in-out;
 }
 
-#page-4 ul {
-    display: flex; 
-    align-items: flex-start;
-    list-style: none; 
+/* Right Side */
+#timeline ul li:nth-child(odd) div {
+    left: 40px;
+    transform: translate(200px, 0);
 }
 
-#page-4 ul li {
-    color: black;
-    padding: 0.75rem;
-    margin: 0 0.25rem;
+/* Left Side */
+#timeline ul li:nth-child(even) div {
+    left: -434px;
+    transform: translate(-200px, 0);
 }
 
-/* Keyframes */
-@keyframes heading {
-    to {
-    transform: translationY(0);
+/* Dots */
+#timeline ul li:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 25px;
+    height: 25px;
+    background: var(--secondary-color);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: background 1s ease-in-out;
+}
+
+/* Arrows Base */
+#timeline ul div:before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Right Side Arrows */
+#timeline ul li:nth-child(odd) div:before {
+   left: -15px;
+   border-width: 8px 16px 8px 0; 
+   border-color: transparent var
+   (--secondary-color) transparent transparent;
+}
+
+/* Left Side Arrows */
+#timeline ul li:nth-child(even) div:before {
+    right: -15px;
+    border-width: 8px 0px 8px 16px; 
+    border-color: transparent transparent
+    transparent var(--secondary-color);
+}
+
+/* Show Boxes */
+#timeline ul li.show div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media(max-width: 900px) {
+  #timeline ul li div {
+       width: 250px;
+   } 
+
+   #timeline ul li:nth-child(even) div {
+       left: -284px;
+   }
+}
+
+@media(max-width: 600px) {
+   #timeline ul li {
+    margin-left: 20px;
+    }
+
+   #timelineul li div {
+      width: calc(100vw - 90px)
+    }
+
+    #timeline ul li:nth-child(even) div {
+      left: 40px;
+    }
+
+    #timeline ul li:nth-child(even) div:before {
+      left: -15px;
+      border-width: 8px 16px 8px 0; 
+      border-color: transparent var
+      (--secondary-color) transparent 
+      transparent;
     }
 }
 
-@keyframes text {
-    to {
-    transform: translationY(0);
-    }
-}

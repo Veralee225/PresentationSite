@@ -3,95 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentation</title>
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Manrope?sidebar.open&selection.family=Manrope:wght@200">
+    <script src="https://kit.fontawesome.com/bbc2115c06.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <title>Knolwedge Timeline</title>
 </head>
 <body>
-    <!-- Page 1 (Intro) -->
-    <section id="page-1" class="page">
-        <h1>Welcome!</h1>
-        <p>Hope you find this presentation fascinating.</p>
-        <div>
-        <a href="#page-2" class="btn">
-        Next Page <i class="fas 
-        fa-arrow-circle-down"></i>
-        </a>
-        </div>
-    </section>
-    <!-- Page 2 -->
-    <section id="page-2" class="page">
-        <h1>I am Vera</h1>
-        <p>Do you know that you can create cool stuffs?</p>
-        <div>
-        <a href="#page-1" class="btn btn-dark">
-        Previous Page <i class="fas 
-        fa-arrow-circle-up"></i>
-        </a>
-        <a href="#page-3" class="btn">
-            Next Page <i class="fas 
-            fa-arrow-circle-down"></i>
-            </a>
-        </div>
-    </section>
-    <!-- Page 3 -->
-    <section id="page-3" class="page">
-        <h1>Lockdown Hobbies</h1>
-        <p>This period has been crazy, so the following as been the way forward:</p>
-        <ul>
-            <li>Movies</li>
-            <li>Sleep</li>
-            <li>Eat</li>
-            <li>Code</li>
-            <li>Meditate</li>
-            <li>Read</li>
-        </ul>
-        <div>
-        <a href="#page-2" class="btn btn-dark">
-        Previous Page <i class="fas 
-        fa-arrow-circle-up"></i>
-        </a>
-        <a href="#page-4" class="btn">
-            Next Page <i class="fas 
-            fa-arrow-circle-down"></i>
-            </a>
-        </div>
-    </section>
-    <!--Page 4-->
-    <section id="page-4" class="page">
-        <h1>Cities to visit</h1>
-        <ul>
-            <li>Sydney</li>
-            <li>Tasmania</li>
-            <li>San Francisco</li>
-            <li>Newyork</li>
-        </ul>
-        <div>
-    <a href="#page-1" class="btn">
-        Previous Page <i class="fas 
-        fa-arrow-circle-up"></i>
-    </a>
-    </div>
-    </section>
-    
-    <script
-  src="https://code.jquery.com/jquery-3.5.0.min.js"
-  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-  crossorigin="anonymous"></script>
+   <header id="main-header">
+       <div class="container">
+        <h1><i class="fas fa-handshake"></i>
+        Knowledge Resume</h1>  
+        <h3><i class="fas fa-user"></i> Vera
+        Adiele</h3>
+       </div>
+   </header> 
 
-  <script>
-    // Smooth Scrolling
-    $('.btn').on('click', function(event) {
-        if (this.hash !== '') {
-            event.preventDefault();
-            const hash = this.hash;
-            $('html, body').animate(
-             {
-                 scrollTop: $(hash).offset().top
-             },
-             600
-            );
-        }
-    });  
-  </script>
+   <section id='timeline'>
+   <ul>
+    <li>
+        <div>
+          <h3><i class="fas 
+          fa-chevron-right"></i>2019: Study & Research</h3>
+          <P>This was the begining of my career switch. i read a book on web design and articles to help me define a path.</P>
+        </div>
+    </li>  
+    <li>
+        <div>
+          <h3><i class="fas 
+          fa-chevron-right"></i>2019-2020: HTML5 & CSS3</h3>
+          <P>I learned the basic of html5 and css3.</P>
+        </div>
+    </li>  
+    <li>
+        <div>
+          <h3><i class="fas 
+          fa-chevron-right"></i>2020: Built a website</h3>
+          <P>I built a simple website using html5 & css3 with the aid of a tutorial.</P>
+        </div>
+    </li> 
+        <li>
+            <div>
+              <h3><i class="fas 
+              fa-chevron-right"></i>2020: More projects</h3>
+              <P>I built more projects, from signup pages to small website.</P>
+            </div>
+        </li>  
+    <li>
+        <div>
+          <h3><i class="fas 
+          fa-chevron-right"></i>2020: Javascript, git & github</h3>
+          <P>I learned Javascript, i also leaned how to use git & github.</P>
+        </div>
+    </li>   
+   </ul>
+   </section>
+
+   <script scr="main.js"></script>
 </body>
 </html>
